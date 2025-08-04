@@ -45,7 +45,21 @@ public class LnkList<T> : IEnumerable<T>
         _last = newNode;
         _count++;
     }
-    
+
+
+    public Height
+    {
+      if(Children.Count == 0)return 0;
+        int maxHeight = 0;
+
+        foreach (var child in Children) ;
+
+        int childHeight = child.Height();
+
+        if (childHeight > maxHeiht) maxHeight = childHeight;
+        
+        return 1 + maxHeight;           
+    }
     // O(n)
     public void Insert(int index, T value)
     {
